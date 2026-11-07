@@ -5,6 +5,10 @@
 # to nexamasr.com/api/pos/media (308 keeps the POST, its body and the X-Pos-Token header).
 # First match wins. Pages Functions (functions/api/chat.js → /api/chat) are not affected.
 
+# Icons some browsers and phones ask for at the root
+/apple-touch-icon.png              /assets/img/brand/apple-touch-icon.png   301
+/apple-touch-icon-precomposed.png  /assets/img/brand/apple-touch-icon.png   301
+
 # Storexa dashboards and apps
 /admin                 https://storexa.nexamasr.com/admin                 301
 /admin/*               https://storexa.nexamasr.com/admin/:splat          301

@@ -8,7 +8,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace
 const OUT = path.join(ROOT, 'dist');
 const PUBLIC = [
   'index.html', 'bexa.html', 'foodexa.html', 'storexa.html', 'videos.html', '404.html',
-  'robots.txt', 'sitemap.xml', '_redirects', '_headers', 'sw.js',
+  'robots.txt', 'sitemap.xml', '_redirects', '_headers', 'sw.js', 'favicon.ico',
   'assets', 'knowledge/kb.json', 'knowledge/kb.md', 'brand/nexa-logo-kit',
 ];
 
