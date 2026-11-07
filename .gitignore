@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+
+# Local-only: secrets and editor/preview settings
+.dev.vars
+.env
+.env.*
+.claude/
+
+# Logo drafts (regenerate with: powershell -File tools/logo/render.ps1)
+brand/logo-options/

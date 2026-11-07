@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Nexa Solutions — Rising N logo. Colours: navy #0B1220/#1E293B, lime #65C21A/#B5F04A -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="62 90 388 344"><defs>
+    <linearGradient id="c1black-lime" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#65C21A"/><stop offset="1" stop-color="#B5F04A"/></linearGradient>
+  </defs><g transform="translate(-56 30)">
+        <path d="M132 380 V160 H196 L316 318 V252 H380 V380 H318 L196 222 V380 Z" fill="#000" stroke="#000" stroke-width="16" stroke-linejoin="round"/>
+        <rect x="316" y="172" width="64" height="64" rx="14" fill="#000"/>
+        <rect x="396" y="116" width="48" height="48" rx="11" fill="#000"/>
+        <rect x="460" y="72" width="32" height="32" rx="8" fill="#000" fill-opacity="1"/></g></svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Storexa mark: a shopping bag whose handle and body draw an «S», on the brand-violet tile, with the family's lime pixel. -->
+  <defs>
+    <linearGradient id="sx-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A78BFA"/>
+      <stop offset="0.5" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </linearGradient>
+    <radialGradient id="sx-shine" cx="0.22" cy="0.12" r="0.85">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sx-lime" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#65C21A"/>
+      <stop offset="1" stop-color="#B5F04A"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#sx-tile)"/>
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#sx-shine)"/>
+  <rect x="18" y="18" width="476" height="476" rx="118" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4"/>
+  <!-- bag handle -->
+  <path d="M196 196 v-26 a60 60 0 0 1 120 0 v26" fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round"/>
+  <!-- bag body -->
+  <path d="M136 196 h240 l-18 204 a36 36 0 0 1 -36 32 h-132 a36 36 0 0 1 -36 -32 z" fill="#FFFFFF"/>
+  <!-- S cut into the bag -->
+  <path d="M296 262 c-6 -20 -24 -30 -44 -30 c-26 0 -44 14 -44 34 c0 44 92 28 92 74 c0 22 -20 38 -48 38 c-24 0 -42 -12 -48 -32" fill="none" stroke="#7C3AED" stroke-width="26" stroke-linecap="round"/>
+  <rect x="362" y="88" width="36" height="36" rx="9" fill="url(#sx-lime)"/>
+  <rect x="414" y="58" width="22" height="22" rx="6" fill="#FFFFFF" fill-opacity="0.85"/>
+</svg>

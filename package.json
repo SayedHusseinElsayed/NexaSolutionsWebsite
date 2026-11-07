@@ -1,0 +1,16 @@
+{
+  "name": "nexa-solutions-website",
+  "private": true,
+  "type": "module",
+  "description": "Nexa Solutions website (static) + AI assistant function for Cloudflare Pages",
+  "scripts": {
+    "build": "node tools/build-knowledge.mjs",
+    "posters": "powershell -File tools/posters/render.ps1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0"
+  },
+  "devDependencies": {
+    "qrcode": "1.5.4"
+  }
+}
