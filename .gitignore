@@ -1,5 +1,6 @@
 node_modules/
 .wrangler/
+dist/
 
 # Local-only: secrets and editor/preview settings
 .dev.vars

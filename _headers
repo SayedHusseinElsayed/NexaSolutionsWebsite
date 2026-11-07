@@ -1,0 +1,16 @@
+# Cloudflare Pages response headers for the company website.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000
+
+# The clean-up service worker must never be cached, so old browsers pick it up quickly.
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Service-Worker-Allowed: /
+
+# Generated knowledge base and build tools are not meant to be cached long.
+/knowledge/*
+  Cache-Control: public, max-age=300

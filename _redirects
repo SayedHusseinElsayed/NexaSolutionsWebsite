@@ -1,0 +1,37 @@
+# Cloudflare Pages redirects for nexamasr.com (the Nexa Solutions company website).
+# The Storexa platform used to live on nexamasr.com and now lives on storexa.nexamasr.com.
+# These keep every old link working: dashboards, installed apps, store links, images saved
+# in the database as https://nexamasr.com/media/…, and Bexa POS installs that upload photos
+# to nexamasr.com/api/pos/media (308 keeps the POST, its body and the X-Pos-Token header).
+# First match wins. Pages Functions (functions/api/chat.js → /api/chat) are not affected.
+
+# Storexa dashboards and apps
+/admin                 https://storexa.nexamasr.com/admin                 301
+/admin/*               https://storexa.nexamasr.com/admin/:splat          301
+/owner                 https://storexa.nexamasr.com/owner                 301
+/owner/*               https://storexa.nexamasr.com/owner/:splat          301
+
+# Stores, demo stores, images and videos
+/store/*               https://storexa.nexamasr.com/store/:splat          301
+/demo/*                https://storexa.nexamasr.com/demo/:splat           301
+/media/*               https://storexa.nexamasr.com/media/:splat          301
+/video/*               https://storexa.nexamasr.com/video/:splat          301
+
+# Storexa APIs (308 = same method and body)
+/api/pos/*             https://storexa.nexamasr.com/api/pos/:splat        308
+/api/media/*           https://storexa.nexamasr.com/api/media/:splat      308
+/api/ai-design         https://storexa.nexamasr.com/api/ai-design         308
+/api/owner/*           https://storexa.nexamasr.com/api/owner/:splat      308
+/api/indexnow          https://storexa.nexamasr.com/api/indexnow          308
+
+# Storexa's own public pages
+/terms                 https://storexa.nexamasr.com/terms                 301
+/privacy               https://storexa.nexamasr.com/privacy               301
+/pricing               https://storexa.nexamasr.com/pricing               301
+/features              https://storexa.nexamasr.com/features              301
+/stores                https://storexa.nexamasr.com/stores                301
+/create-online-store   https://storexa.nexamasr.com/create-online-store   301
+/cash-on-delivery      https://storexa.nexamasr.com/cash-on-delivery      301
+/shopify-alternative   https://storexa.nexamasr.com/shopify-alternative   301
+/for/*                 https://storexa.nexamasr.com/for/:splat            301
+/sitemap-main.xml      https://storexa.nexamasr.com/sitemap-main.xml      301

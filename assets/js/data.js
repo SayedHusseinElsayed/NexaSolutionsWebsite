@@ -11,10 +11,11 @@ window.NEXA = {
   address: 'المنيا الجديدة، مصر',
   hours: 'متاحون يومياً — الرد على واتساب طوال اليوم',
 
-  // Live Storexa demo stores. Update these when the e-commerce app moves to its own address.
+  // The Storexa platform (merchant dashboards, store sign-up) and its live demo stores.
+  storexaApp: 'https://storexa.nexamasr.com',
   storexaDemos: {
-    home: 'https://nexamasr.com/demo/loma-home',
-    fashion: 'https://nexamasr.com/demo/sidra'
+    home: 'https://storexa.nexamasr.com/demo/loma-home',
+    fashion: 'https://storexa.nexamasr.com/demo/sidra'
   },
 
   products: {

@@ -53,10 +53,20 @@ npx serve .
 
 ## النشر على nexamasr.com
 
-الأسهل: **Cloudflare Pages** (الدومين بالفعل على Cloudflare):
-1. ارفع المجلد على GitHub (أو ارفعه مباشرة من لوحة Cloudflare Pages ← Upload assets).
-2. Build command: `npm run build` — Output directory: `/` (Cloudflare بيثبّت `package.json` وبيبني قاعدة المعرفة والدالة تلقائياً).
-3. اربط الدومين `nexamasr.com` بالمشروع من Custom domains — **بعد** نقل تطبيق المتاجر لعنوانه الجديد.
+الموقع على **Cloudflare Pages** مربوط بـ GitHub (كل push على `main` بينشر تلقائياً):
+1. Build command: `npm run build` — Build output directory: `dist` (البناء بيعمل قاعدة المعرفة وبينسخ ملفات الموقع العامة بس لـ `dist/`؛ مجلد `functions/` بيتاخد من جذر المشروع).
+2. Variables and Secrets: `ANTHROPIC_API_KEY` (اختياري — من غيره المساعد بيرد من بيانات الموقع).
+3. Custom domains: `nexamasr.com` و`www.nexamasr.com`.
+
+### العناوين على nexamasr.com
+| العنوان | إيه اللي عليه |
+|---|---|
+| `nexamasr.com` و`www` | موقع الشركة ده (Cloudflare Pages) |
+| `storexa.nexamasr.com` | منصة Storexa: لوحات التجار والمالك وصفحاتها (Worker `nexa-e-commerce`، عن طريق المسار `*.nexamasr.com/*`) |
+| `<اسم-المتجر>.nexamasr.com` | متاجر العملاء (نفس الـ Worker) |
+| `lingering-sun-4a2c….workers.dev` | وركر التراخيص لـ Bexa وFoodexa وتطبيق المالك والويتر — مالوش علاقة بالدومين |
+
+ملف `_redirects` بيحوّل عناوين Storexa القديمة على nexamasr.com (`/admin`، `/owner`، `/store`، `/media`، `/api/pos/*`، صفحات الأسعار…) لـ `storexa.nexamasr.com`، عشان اللينكات القديمة والصور المحفوظة ونسخ Bexa المتثبتة تفضل شغالة. و`sw.js` بيمسح الـ service worker القديم بتاع المتجر من أجهزة اللي زاروا الموقع قبل كده.
 
 Cloudflare Pages يدعم الروابط بدون `.html` تلقائياً (`/bexa`، `/videos`) — وهي المستخدمة في `sitemap.xml` والروابط canonical.
 
