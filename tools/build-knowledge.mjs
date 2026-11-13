@@ -17,7 +17,8 @@ const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const sandbox = { window: {} };
 vm.runInNewContext(read('assets/js/data.js'), sandbox);
 vm.runInNewContext(read('assets/js/features.js'), sandbox);
-const D = sandbox.window.NEXA, F = sandbox.window.NEXA_FEATURES;
+vm.runInNewContext(read('assets/js/apps.js'), sandbox); // its renderer skips itself without a document
+const D = sandbox.window.NEXA, F = sandbox.window.NEXA_FEATURES, A = sandbox.window.NEXA_APPS || {};
 const SITE = D.siteUrl || 'https://nexamasr.com';
 
 // --- page text: <main> → light markdown ---
@@ -71,6 +72,18 @@ const TAG = { pro: 'من الباقة الاحترافية', full: 'في الب�
 for (const [k, groups] of Object.entries(F)) {
   out.push(`## كل مميزات ${D.products[k].name}\n` + groups.map(g =>
     `### ${D.products[k].name} — ${g.title}\n` + g.items.map(it => `- ${it[0]}: ${it[1]}${it[2] ? ` (${TAG[it[2]]})` : ''}`).join('\n')).join('\n'));
+}
+
+// mobile apps of each product (assets/js/apps.js)
+for (const [k, a] of Object.entries(A)) {
+  const name = D.products[k].name;
+  out.push(`## تطبيقات الموبايل مع ${name}\nصفحة المنتج: ${SITE}/${k}#${k === 'bexa' ? 'owner' : 'apps'}` +
+    (a.flow ? `\nإزاي التطبيقات مربوطة ببعض: ${a.flow.map(f => `${f[1]} (${f[2]})`).join(' ← ')}` : '') +
+    (a.trust ? '\n' + a.trust.map(t => `- ${t[1]}: ${t[2]}`).join('\n') : '') +
+    (a.note ? `\nملحوظة: ${a.note}` : ''));
+  for (const p of a.panels) {
+    out.push(`### ${name} — ${p.label}${p.tag ? ` (${TAG[p.tag]})` : ''}\n${p.title}. ${p.sub}\n` + p.points.map(t => `- ${t}`).join('\n'));
+  }
 }
 
 // prices, straight from the pricing sections of the pages
