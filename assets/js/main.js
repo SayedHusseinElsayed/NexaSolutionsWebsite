@@ -176,7 +176,7 @@
   });
 
   /* ---------- Full feature catalog: <div data-features="bexa"> (data in features.js) ---------- */
-  var TAGS = { pro: 'من الاحترافية', full: 'الشاملة', new: 'جديد', soon: 'قريباً' };
+  var TAGS = { new: 'جديد', soon: 'قريباً' };
   var norm = function (s) { return String(s).toLowerCase().replace(/[ً-ْـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي'); };
   window.nexaNorm = norm;
   document.querySelectorAll('[data-features]').forEach(function (box) {

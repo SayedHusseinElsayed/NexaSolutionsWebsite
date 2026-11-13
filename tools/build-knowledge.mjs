@@ -68,7 +68,7 @@ ${t.steps.map((s, i) => `  ${i + 1}. ${s}`).join('\n')}
 }
 
 // features
-const TAG = { pro: 'من الباقة الاحترافية', full: 'في الباقة الشاملة', new: 'جديد', soon: 'قريباً — لسه مش متاح' };
+const TAG = { new: 'جديد', soon: 'قريباً — لسه مش متاح' };
 for (const [k, groups] of Object.entries(F)) {
   out.push(`## كل مميزات ${D.products[k].name}\n` + groups.map(g =>
     `### ${D.products[k].name} — ${g.title}\n` + g.items.map(it => `- ${it[0]}: ${it[1]}${it[2] ? ` (${TAG[it[2]]})` : ''}`).join('\n')).join('\n'));
@@ -86,11 +86,7 @@ for (const [k, a] of Object.entries(A)) {
   }
 }
 
-// prices, straight from the pricing sections of the pages
-for (const k of Object.keys(D.products)) {
-  const t = pageText(D.products[k].page, 'pricing');
-  if (t) out.push(`## أسعار وباقات ${D.products[k].name}\n` + t.replace(/^#+ /gm, '- '));
-}
+// No prices or plans on the site: the assistant sends price questions to WhatsApp (knowledge/notes.md).
 
 // pages
 for (const [file, title] of [['index.html', 'الصفحة الرئيسية'], ['bexa.html', 'صفحة Bexa POS'], ['foodexa.html', 'صفحة Foodexa'], ['storexa.html', 'صفحة Storexa']]) {

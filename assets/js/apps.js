@@ -3,7 +3,6 @@
    Edit the text here; screens live in assets/img/apps (made by tools/app-shots.mjs
    from the real phone screenshots in the product folders).
    Each "panel" is one tab: a phone showing its screens + what it does.
-   tag: 'full' = needs the Full (الشاملة) plan.
    ========================================================================= */
 window.NEXA_APPS = {
   bexa: {
@@ -13,7 +12,7 @@ window.NEXA_APPS = {
       ['shield', 'آمن ومشفّر', 'الموبايل بيتصل بالمحل عن طريق شبكة خاصة مشفّرة، وكل موبايل بيتفعّل لوحده'],
       ['wifioff', 'شغال حتى لو الفرع فصل', 'آخر بيانات بتفضل قدامك، وبتتحدّث أول ما الاتصال يرجع']
     ],
-    note: 'التقارير في كل الباقات. البيع وأدوات المخزون وإدارة الأصناف من الموبايل في الباقة الشاملة — وتقدر تقفل أي جزء منهم من إعدادات جهاز الكاشير.',
+    note: 'تقدر تشغّل أو تقفل البيع وأدوات المخزون وإدارة الأصناف من الموبايل في أي وقت من إعدادات جهاز الكاشير.',
     panels: [
       {
         key: 'follow', label: 'تابع محلّك', icon: 'chart',
@@ -34,7 +33,7 @@ window.NEXA_APPS = {
         ]
       },
       {
-        key: 'sell', label: 'بيع من الموبايل', icon: 'store', tag: 'full',
+        key: 'sell', label: 'بيع من الموبايل', icon: 'store',
         title: 'فاتورة كاملة من موبايلك',
         sub: 'لما الكاشير مشغول، أو وإنت في المخزن أو في معرض — موبايلك بقى نقطة بيع.',
         screens: [
@@ -49,7 +48,7 @@ window.NEXA_APPS = {
         ]
       },
       {
-        key: 'stock', label: 'المخزون بالكاميرا', icon: 'package', tag: 'full',
+        key: 'stock', label: 'المخزون بالكاميرا', icon: 'package',
         title: 'جرد واستلام وأسعار… بالكاميرا',
         sub: 'وجّه كاميرا الموبايل على الباركود — من غير أجهزة إضافية ولا ورق.',
         screens: [
@@ -78,7 +77,7 @@ window.NEXA_APPS = {
       ['bell', 'الويتر يقدّم', 'ويرد على النداءات'],
       ['chart', 'المالك يتابع', 'كله لحظة بلحظة']
     ],
-    note: 'كل تطبيق موبايل بيتفعّل على كل موبايل لوحده. منيو الزبون من غير تحميل أي حاجة. كلّمنا على عدد الموبايلات اللي محتاجها وناخد لك عرض سعر.',
+    note: 'كل تطبيق موبايل بيتفعّل على كل موبايل لوحده، ومنيو الزبون من غير تحميل أي حاجة. كلّمنا على واتساب ونبعتلك عرض سعر حسب احتياج مطعمك.',
     panels: [
       {
         key: 'guest', label: 'منيو الزبون (QR)', icon: 'qr',
@@ -167,7 +166,7 @@ window.NEXA_APPS = {
 
     var tabs = '<div class="ax-tabs" role="tablist" aria-label="اختار">' + data.panels.map(function (p, i) {
       return '<button type="button" role="tab" id="' + id + '-tab-' + i + '" aria-controls="' + id + '-panel-' + i + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" class="ax-tab">' +
-        icon(p.icon) + '<span>' + esc(p.label) + '</span>' + (p.tag === 'full' ? '<em class="tag full">الشاملة</em>' : '') + '</button>';
+        icon(p.icon) + '<span>' + esc(p.label) + '</span>' + '</button>';
     }).join('') + '</div>';
 
     var panels = data.panels.map(function (p, i) {
@@ -183,7 +182,7 @@ window.NEXA_APPS = {
           '<div class="ax-phone"><div class="ax-screen">' + shots + '</div></div>' + dots +
         '</div>' +
         '<div class="ax-copy">' +
-          '<div class="ax-head"><span class="ax-ico">' + icon(p.icon) + '</span><div><h3>' + esc(p.title) + (p.tag === 'full' ? ' <em class="tag full">الباقة الشاملة</em>' : '') + '</h3><p>' + esc(p.sub) + '</p></div></div>' +
+          '<div class="ax-head"><span class="ax-ico">' + icon(p.icon) + '</span><div><h3>' + esc(p.title) + '</h3><p>' + esc(p.sub) + '</p></div></div>' +
           (p.chips ? '<div class="ax-chips">' + p.chips.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div>' : '') +
           '<ul class="ax-points">' + p.points.map(function (t) { return '<li>' + icon('check') + '<span>' + esc(t) + '</span></li>'; }).join('') + '</ul>' +
         '</div>' +

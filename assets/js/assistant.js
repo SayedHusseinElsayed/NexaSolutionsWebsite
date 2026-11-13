@@ -14,9 +14,9 @@
 
   var SUGGEST = {
     home: ['إيه الفرق بين Bexa وFoodexa وStorexa؟', 'أنهي برنامج يناسب محل ملابس؟', 'إزاي أحمّل النسخة التجريبية؟', 'البرامج بتشتغل من غير إنترنت؟'],
-    bexa: ['أسعار باقات Bexa كام؟', 'Bexa بيدعم المقاسات والألوان؟', 'إزاي أحمّل Bexa وأدخل عليه؟', 'ينفع أربط أكتر من فرع؟'],
-    foodexa: ['Foodexa فيه منيو QR؟', 'إزاي أثبّت Foodexa؟', 'تطبيق الويتر بيعمل إيه؟', 'سعر Foodexa كام؟'],
-    storexa: ['أسعار Storexa كام؟', 'إزاي أقلل الطلبات الوهمية؟', 'المتجر بيدعم InstaPay؟', 'أبدأ متجري إزاي؟'],
+    bexa: ['تطبيق Bexa Owner بيعمل إيه؟', 'Bexa بيدعم المقاسات والألوان؟', 'إزاي أحمّل Bexa وأدخل عليه؟', 'ينفع أربط أكتر من فرع؟'],
+    foodexa: ['Foodexa فيه منيو QR؟', 'إزاي أثبّت Foodexa؟', 'تطبيق الويتر بيعمل إيه؟', 'تطبيق المالك بيعرض إيه؟'],
+    storexa: ['فيه تجربة مجانية للمتجر؟', 'إزاي أقلل الطلبات الوهمية؟', 'المتجر بيدعم InstaPay؟', 'أبدأ متجري إزاي؟'],
     videos: ['فين دروس شرح Bexa؟', 'إزاي أحمّل النسخة التجريبية؟', 'أنهي برنامج يناسب مطعم؟', 'إزاي أكلم الدعم؟']
   };
   var suggestions = SUGGEST[page] || SUGGEST.home;
@@ -73,7 +73,7 @@
   }
   function welcome() {
     log.innerHTML = '';
-    bubble('assistant', 'أهلاً بيك 👋 أنا مساعد Nexa. اسألني عن **Bexa POS** أو **Foodexa** أو **Storexa**: المميزات، الأسعار، التحميل والتجربة، أو أنهي برنامج يناسب نشاطك.');
+    bubble('assistant', 'أهلاً بيك 👋 أنا مساعد Nexa. اسألني عن **Bexa POS** أو **Foodexa** أو **Storexa**: المميزات، التطبيقات، التحميل والتجربة، أو أنهي برنامج يناسب نشاطك.');
     var chips = document.createElement('div'); chips.className = 'ai-chips';
     chips.innerHTML = suggestions.map(function (q) { return '<button type="button">' + esc(q) + '</button>'; }).join('');
     log.appendChild(chips);
