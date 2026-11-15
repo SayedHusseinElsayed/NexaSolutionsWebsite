@@ -121,7 +121,7 @@
     footer.innerHTML =
       '<div class="container"><div class="footer-grid">' +
         '<div><a class="logo" href="index.html"><img src="assets/img/brand/nexa.svg" alt="" width="40" height="40"><span>Nexa Solutions<small>حلول برمجية لإدارة أعمالك</small></span></a>' +
-        '<p>شركة مصرية تطوّر برامج عربية بالكامل لإدارة المحلات والمطاعم والمتاجر الإلكترونية — من الكاشير حتى البيع أونلاين.</p>' +
+        '<p>شركة مصرية بتصمّم وتطوّر حلول برمجية احترافية لإدارة الأعمال — من المحلات والمطاعم والمتاجر الإلكترونية لحد الأنظمة المصمّمة خصيصًا لأي نشاط.</p>' +
         '<div class="social"><a href="' + wa() + '" target="_blank" rel="noopener" aria-label="واتساب">' + icon('whatsapp') + '</a>' +
         '<a href="' + D.facebook + '" target="_blank" rel="noopener" aria-label="فيسبوك">' + icon('facebook') + '</a>' +
         '<a href="tel:' + D.phone + '" aria-label="اتصل بنا">' + icon('phone') + '</a></div></div>' +
