@@ -96,6 +96,8 @@ for (const [file, title] of [['index.html', 'الصفحة الرئيسية'], ['
 // videos & customers
 out.push('## الفيديوهات والشروحات\nكل الفيديوهات على ' + SITE + '/videos\n' +
   D.videos.map(v => `- [${D.products[v.product] ? D.products[v.product].name : 'Nexa'}] ${v.title}${v.duration ? ' (' + v.duration + ')' : ''}`).join('\n'));
+out.push('## آخر التحديثات في منتجاتنا\nكل التحديثات على ' + SITE + '/updates\n' +
+  (D.updates || []).map(u => `- ${u.date} [${D.products[u.product] ? D.products[u.product].name : 'Nexa Solutions'}] ${u.title}: ${u.body}`).join('\n'));
 out.push('## من عملائنا\n' + D.customers.map(c => `- ${c.name}${c.type ? ' — ' + c.type : ''}${c.city ? ' — ' + c.city : ''} (${[].concat(c.product).map(x => D.products[x] ? D.products[x].name : x).join(' + ')})`).join('\n'));
 
 // hand-written notes

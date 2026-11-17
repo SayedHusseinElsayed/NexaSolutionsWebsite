@@ -77,6 +77,7 @@
     ['foodexa.html', 'Foodexa', 'foodexa'],
     ['storexa.html', 'Storexa', 'storexa'],
     ['videos.html', 'الفيديوهات', 'videos'],
+    ['updates.html', 'التحديثات', 'updates'],
     ['index.html#about', 'من نحن', 'about']
   ];
   var header = document.getElementById('site-header');
@@ -97,6 +98,7 @@
       '<a href="index.html">الرئيسية</a>' +
       Object.keys(P).map(function (k) { return '<a href="' + P[k].page + '"><img src="' + P[k].logo + '" alt="">' + P[k].name + '</a>'; }).join('') +
       '<hr><a href="videos.html">' + icon('play') + 'الفيديوهات والشروحات</a>' +
+      '<a href="updates.html">' + icon('sparkles') + 'آخر التحديثات</a>' +
       '<a href="index.html#customers">' + icon('users') + 'عملاؤنا</a>' +
       '<a href="index.html#about">' + icon('heart') + 'من نحن</a>' +
       '<a class="btn btn-wa btn-block" href="' + wa('مرحباً Nexa Solutions، أريد الاستفسار عن منتجاتكم') + '" target="_blank" rel="noopener">' + icon('whatsapp') + 'كلمنا على واتساب</a>' +
@@ -126,7 +128,7 @@
         '<a href="' + D.facebook + '" target="_blank" rel="noopener" aria-label="فيسبوك">' + icon('facebook') + '</a>' +
         '<a href="tel:' + D.phone + '" aria-label="اتصل بنا">' + icon('phone') + '</a></div></div>' +
         '<div><h4>منتجاتنا</h4><ul>' + Object.keys(P).map(function (k) { return '<li><a href="' + P[k].page + '">' + P[k].name + '</a></li>'; }).join('') + '</ul></div>' +
-        '<div><h4>روابط</h4><ul><li><a href="videos.html">الفيديوهات والشروحات</a></li><li><a href="index.html#customers">عملاؤنا</a></li><li><a href="index.html#about">من نحن</a></li><li><a href="index.html#faq">الأسئلة الشائعة</a></li></ul></div>' +
+        '<div><h4>روابط</h4><ul><li><a href="videos.html">الفيديوهات والشروحات</a></li><li><a href="updates.html">آخر التحديثات</a></li><li><a href="index.html#customers">عملاؤنا</a></li><li><a href="index.html#about">من نحن</a></li><li><a href="index.html#faq">الأسئلة الشائعة</a></li></ul></div>' +
         '<div><h4>تواصل معنا</h4><ul><li><a href="tel:' + D.phone + '" dir="ltr">' + D.phone + '</a></li>' +
         (D.email ? '<li><a href="mailto:' + D.email + '">' + D.email + '</a></li>' : '') +
         '<li>' + D.address + '</li><li><a href="' + wa() + '" target="_blank" rel="noopener">واتساب</a></li></ul></div>' +
@@ -295,6 +297,55 @@
       '<div class="meta"><div class="chips"><span class="chip ' + esc(v.product || 'nexa') + '">' + esc(productName(v.product)) + '</span><span class="chip">' + esc(TYPES[v.type] || 'فيديو') + '</span></div>' +
       '<h3>' + esc(v.title) + '</h3>' + (v.desc ? '<p>' + esc(v.desc) + '</p>' : '') + '</div></button>';
   }
+  /* ---------- Updates (home section + updates.html) ---------- */
+  var MONTHS = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+  function updDate(s) { var p = s.split('-'); return +p[2] + ' ' + MONTHS[+p[1] - 1] + ' ' + p[0]; }
+  function updateCard(u) {
+    var pr = P[u.product];
+    var tag = pr ? '<span class="tag"><img src="' + pr.logo + '" alt="">' + esc(pr.name) + '</span>' : '<span class="tag">Nexa Solutions</span>';
+    var kind = u.tag === 'improved' ? '<span class="kind improved">تحسين</span>' : '<span class="kind">جديد</span>';
+    return '<article class="news-card ' + (pr ? u.product : '') + ' reveal">' +
+      '<div class="news-meta">' + tag + kind + '</div>' +
+      '<h3>' + esc(u.title) + '</h3><p>' + esc(u.body) + '</p>' +
+      '<time datetime="' + u.date + '">' + updDate(u.date) + '</time></article>';
+  }
+  var updates = (D.updates || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+  document.querySelectorAll('[data-updates]').forEach(function (box) {
+    var limit = +box.getAttribute('data-limit') || 0;
+    var grouped = box.hasAttribute('data-group');
+    var filterBar = box.previousElementSibling && box.previousElementSibling.classList.contains('filters') ? box.previousElementSibling : null;
+    var state = 'all';
+    function render() {
+      var list = updates.filter(function (u) { return state === 'all' || u.product === state; });
+      if (limit) list = list.slice(0, limit);
+      if (!list.length) { box.innerHTML = '<div class="empty">لا توجد تحديثات هنا بعد — قريباً.</div>'; return; }
+      if (!grouped) { box.innerHTML = '<div class="news-grid">' + list.map(updateCard).join('') + '</div>'; observe(box); return; }
+      var html = '', month = '';
+      list.forEach(function (u) {
+        var m = u.date.slice(0, 7);
+        if (m !== month) {
+          if (month) html += '</div></div>';
+          month = m;
+          html += '<div class="upd-month"><h2 class="upd-month-title">' + MONTHS[+m.slice(5, 7) - 1] + ' ' + m.slice(0, 4) + '</h2><div class="news-grid">';
+        }
+        html += updateCard(u);
+      });
+      box.innerHTML = html + '</div></div>';
+      observe(box);
+    }
+    if (filterBar) {
+      filterBar.addEventListener('click', function (e) {
+        var b = e.target.closest('.filter'); if (!b) return;
+        state = b.getAttribute('data-val');
+        filterBar.querySelectorAll('.filter').forEach(function (x) { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        render();
+      });
+      var q = new URLSearchParams(location.search).get('product');
+      if (q && (P[q] || q === 'nexa')) { var fb = filterBar.querySelector('[data-val="' + q + '"]'); if (fb) { fb.click(); return; } }
+    }
+    render();
+  });
+
   var videos = D.videos || [];
   document.querySelectorAll('[data-videos]').forEach(function (grid) {
     var only = grid.getAttribute('data-videos');     // '', 'bexa', 'foodexa', 'storexa'

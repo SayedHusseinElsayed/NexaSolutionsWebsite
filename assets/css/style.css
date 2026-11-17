@@ -108,7 +108,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .logo small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: .02em; line-height: 1; margin-top: 2px; }
 .logo span { line-height: 1.1; }
 .nav { display: flex; align-items: center; gap: 4px; margin-inline-start: auto; }
-.nav a { padding: 8px 14px; border-radius: 10px; font-weight: 600; font-size: 15.5px; color: var(--ink-2); transition: background .15s, color .15s; }
+.nav a { padding: 8px 14px; border-radius: 10px; font-weight: 600; font-size: 15.5px; color: var(--ink-2); white-space: nowrap; transition: background .15s, color .15s; }
+@media (max-width: 1180px) { .nav a { padding: 8px 10px; font-size: 15px; } }
 .nav a:hover, .nav a.active { background: var(--bg-tint); color: var(--ink); }
 .header-cta { display: flex; gap: 10px; }
 .menu-btn { display: none; margin-inline-start: auto; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--line); background: #fff; align-items: center; justify-content: center; }
@@ -127,7 +128,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mobile-nav .btn { margin-top: 10px; }
 body.nav-open { overflow: hidden; }
 
-@media (max-width: 960px) {
+@media (max-width: 1060px) {
   .nav, .header-cta { display: none; }
   .menu-btn { display: inline-flex; }
 }
@@ -260,6 +261,16 @@ ul.ticks li::before {
 .news-card .tag img { width: 18px; height: 18px; }
 .news-card h3 { font-size: 19px; }
 .news-card p { color: var(--muted); font-size: 15.5px; margin: 0; }
+.news-card { display: flex; flex-direction: column; }
+.news-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 14px; }
+.news-meta .tag { margin-bottom: 0; }
+.news-card .kind { font-size: 12px; font-weight: 800; color: var(--lime-ink); background: #eefbe2; padding: 2px 9px; border-radius: 999px; }
+.news-card .kind.improved { color: #1d4ed8; background: #e0ecff; }
+.news-card time { display: block; margin-top: auto; padding-top: 14px; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.upd-month + .upd-month { margin-top: 48px; }
+.upd-month-title { font-size: 22px; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
+.upd-month-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.news-more { text-align: center; margin-top: 32px; }
 
 /* ---------- Features (icon grid) ---------- */
 .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
