@@ -60,6 +60,7 @@ window.NEXA = {
      --------------------------------------------------------------------- */
   videos: [
     // ---- Promo videos (shown first; the home page shows the first 3) ----
+    { product: 'foodexa', type: 'promo', title: 'Foodexa: من QR الطاولة لحد الحساب', desc: 'الزبون يمسح ويطلب، الويتر يستلم، والمطبخ يجهّز — كله في نظام واحد.', src: 'assets/video/foodexa-film.mp4', poster: 'assets/video/foodexa-film.webp', duration: '0:43', portrait: true },
     { product: 'foodexa', type: 'promo', title: 'Foodexa: كاشير ومعاه 3 تطبيقات', desc: 'اتمسح. اتطلب. اتطبخ. اتحسب — الزبون يطلب من QR الطاولة، والويتر يستلم، وإنت تتابع من أي مكان.', src: 'assets/video/foodexa-reel.mp4', poster: 'assets/video/foodexa-reel.webp', duration: '0:43', portrait: true },
     { product: 'bexa', type: 'promo', title: 'Bexa POS في دقيقة', desc: 'بيع أسرع، مخزون مضبوط، وأرباح واضحة.', src: 'assets/video/bexa-promo.mp4', poster: 'assets/video/bexa-promo.webp', duration: '1:16' },
     { product: 'storexa', type: 'promo', title: 'متجرك الإلكتروني جاهز', desc: 'اختار نشاطك، والتصميم يتجهز لوحده — وابدأ استقبال الطلبات.', src: 'assets/video/storexa-film.mp4', poster: 'assets/video/storexa-film.webp', duration: '0:35' },
