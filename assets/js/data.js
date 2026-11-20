@@ -21,13 +21,14 @@ window.NEXA = {
   products: {
     bexa:    { name: 'Bexa POS', ar: 'بيكسا', page: 'bexa.html',    logo: 'assets/img/brand/bexa.svg',    color: 'bexa',
       tagline: 'برنامج كاشير ومخزون وحسابات عربي — يعمل بدون إنترنت ودفعة واحدة',
-      // Free trial download (public Google Drive file). Update url + version on every new release.
+      // Free trial download: the signed installer on the updates server (the same file
+      // the app's auto-update uses). Update url + file + version + size after every `npm run release`.
       trial: {
-        url: 'https://drive.google.com/file/d/10XxT0K_iwLDavQTpz339DwXKWJzF9KEk/view?usp=sharing',
-        file: 'Bexa Setup 1.3.2.exe', version: '1.3.2', days: 7,
+        url: 'https://updates.nexamasr.com/bexa/Bexa-Setup-1.3.10.exe',
+        file: 'Bexa-Setup-1.3.10.exe', version: '1.3.10', size: '194 MB', days: 7,
         login: [['اسم المستخدم', 'admin'], ['كلمة المرور', 'admin123']],
         steps: [
-          'حمّل ملف التثبيت من Google Drive (زر «تنزيل» أعلى الصفحة).',
+          'اضغط «تحميل النسخة التجريبية» والملف هيتحمّل على جهازك على طول.',
           'شغّل الملف واتبع خطوات التثبيت.',
           'افتح Bexa وادخل ببيانات الدخول التجريبية.'
         ]
@@ -35,11 +36,11 @@ window.NEXA = {
     foodexa: { name: 'Foodexa',  ar: 'فوديكسا', page: 'foodexa.html', logo: 'assets/img/brand/foodexa.svg', color: 'foodexa',
       tagline: 'نظام مطاعم وكافيهات: كاشير + منيو QR + تطبيق الويتر + تطبيق المالك',
       trial: {
-        url: 'https://drive.google.com/file/d/1O2_FJzonAUprL89NEMh9czsOVQGoSBV2/view?usp=drive_link',
-        file: 'Foodexa Setup 1.3.9.exe', version: '1.3.9', days: 7,
+        url: 'https://updates.nexamasr.com/foodexa/Foodexa-Setup-1.3.9.exe',
+        file: 'Foodexa-Setup-1.3.9.exe', version: '1.3.9', size: '109 MB', days: 7,
         login: [['الحساب', 'المدير العام (admin)'], ['الرمز (PIN)', '1234']],
         steps: [
-          'حمّل ملف تثبيت Foodexa من Google Drive.',
+          'اضغط «تحميل النسخة التجريبية» والملف هيتحمّل على جهازك على طول.',
           'شغّل الملف واتبع خطوات التثبيت — كل اللي البرنامج محتاجه بيتثبّت ويشتغل تلقائياً في الخلفية.',
           'افتح Foodexa وادخل بحساب المدير العام والرمز التجريبي.'
         ]

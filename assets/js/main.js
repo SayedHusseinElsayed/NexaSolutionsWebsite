@@ -160,12 +160,12 @@
     box.className = 'trial-card t-' + key + (compact ? ' compact' : '') + ' reveal';
     box.innerHTML =
       '<div class="trial-top"><img src="' + esc(p.logo) + '" alt="" width="56" height="56"><div><h3>نسخة ' + esc(p.name) + ' التجريبية</h3>' +
-        '<div class="trial-meta"><span>' + icon('windows') + 'Windows 10 / 11 (64-bit)</span><span>' + icon('gift') + esc(t.days) + ' أيام مجاناً بكل المميزات</span><span dir="ltr">v' + esc(t.version) + '</span></div></div></div>' +
+        '<div class="trial-meta"><span>' + icon('windows') + 'Windows 10 / 11 (64-bit)</span><span>' + icon('gift') + esc(t.days) + ' أيام مجاناً بكل المميزات</span><span dir="ltr">v' + esc(t.version) + (t.size ? ' · ' + esc(t.size) : '') + '</span></div></div></div>' +
       (t.requires ? '<p class="trial-req">' + icon('shield') + esc(t.requires) + '</p>' : '') +
       login +
       (compact ? '' : '<ol class="trial-steps">' + t.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>' +
         '<p class="trial-note">لو ظهرت رسالة حماية من Windows، اضغط «More info» ثم «Run anyway». بعد انتهاء التجربة تقدر تفعّل البرنامج وتكمل بنفس بياناتك.</p>') +
-      '<div class="trial-actions"><a class="btn btn-primary" href="' + esc(t.url) + '" target="_blank" rel="noopener">' + icon('download') + 'تحميل النسخة التجريبية</a>' +
+      '<div class="trial-actions"><a class="btn btn-primary" href="' + esc(t.url) + '"' + (/\.exe$/i.test(t.url) ? ' download="' + esc(t.file) + '"' : ' target="_blank" rel="noopener"') + '>' + icon('download') + 'تحميل النسخة التجريبية</a>' +
       (compact ? '<a class="btn btn-ghost" href="' + esc(p.page) + '#download">خطوات التثبيت</a>'
                : '<a class="btn btn-ghost" href="' + wa('مرحباً، محتاج مساعدة في تثبيت النسخة التجريبية من ' + p.name) + '" target="_blank" rel="noopener">' + icon('whatsapp') + 'محتاج مساعدة في التثبيت؟</a>') +
       '</div>';

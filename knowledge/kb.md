@@ -1,5 +1,5 @@
 # قاعدة معرفة Nexa Solutions
-(مولّدة تلقائياً من الموقع https://nexamasr.com — 2026-11-18)
+(مولّدة تلقائياً من الموقع https://nexamasr.com — 2026-11-20)
 
 ## بيانات التواصل
 - الشركة: Nexa Solutions — شركة مصرية بتطوّر برامج عربية لإدارة المحلات والمطاعم والمتاجر الإلكترونية.
@@ -14,12 +14,12 @@
 صفحة المنتج: https://nexamasr.com/bexa
 
 ## تحميل النسخة التجريبية من Bexa POS
-- رابط التحميل (Google Drive): https://drive.google.com/file/d/10XxT0K_iwLDavQTpz339DwXKWJzF9KEk/view?usp=sharing
-- الملف: Bexa Setup 1.3.2.exe — الإصدار 1.3.2 — Windows 10/11 64-bit
+- رابط التحميل (Google Drive): https://updates.nexamasr.com/bexa/Bexa-Setup-1.3.10.exe
+- الملف: Bexa-Setup-1.3.10.exe — الإصدار 1.3.10 — Windows 10/11 64-bit
 - مدة التجربة: 7 أيام مجاناً بكل المميزات
 - بيانات الدخول التجريبية: اسم المستخدم: admin، كلمة المرور: admin123
 - خطوات التثبيت:
-  1. حمّل ملف التثبيت من Google Drive (زر «تنزيل» أعلى الصفحة).
+  1. اضغط «تحميل النسخة التجريبية» والملف هيتحمّل على جهازك على طول.
   2. شغّل الملف واتبع خطوات التثبيت.
   3. افتح Bexa وادخل ببيانات الدخول التجريبية.
 - لو Google Drive قال إنه مش قادر يفحص الملف من الفيروسات: اضغط «Download anyway». ولو ظهرت رسالة حماية Windows: «More info» ثم «Run anyway».
@@ -30,12 +30,12 @@
 صفحة المنتج: https://nexamasr.com/foodexa
 
 ## تحميل النسخة التجريبية من Foodexa
-- رابط التحميل (Google Drive): https://drive.google.com/file/d/1O2_FJzonAUprL89NEMh9czsOVQGoSBV2/view?usp=drive_link
-- الملف: Foodexa Setup 1.3.9.exe — الإصدار 1.3.9 — Windows 10/11 64-bit
+- رابط التحميل (Google Drive): https://updates.nexamasr.com/foodexa/Foodexa-Setup-1.3.9.exe
+- الملف: Foodexa-Setup-1.3.9.exe — الإصدار 1.3.9 — Windows 10/11 64-bit
 - مدة التجربة: 7 أيام مجاناً بكل المميزات
 - بيانات الدخول التجريبية: الحساب: المدير العام (admin)، الرمز (PIN): 1234
 - خطوات التثبيت:
-  1. حمّل ملف تثبيت Foodexa من Google Drive.
+  1. اضغط «تحميل النسخة التجريبية» والملف هيتحمّل على جهازك على طول.
   2. شغّل الملف واتبع خطوات التثبيت — كل اللي البرنامج محتاجه بيتثبّت ويشتغل تلقائياً في الخلفية.
   3. افتح Foodexa وادخل بحساب المدير العام والرمز التجريبي.
 - لو Google Drive قال إنه مش قادر يفحص الملف من الفيروسات: اضغط «Download anyway». ولو ظهرت رسالة حماية Windows: «More info» ثم «Run anyway».
