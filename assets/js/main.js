@@ -99,6 +99,7 @@
       Object.keys(P).map(function (k) { return '<a href="' + P[k].page + '"><img src="' + P[k].logo + '" alt="">' + P[k].name + '</a>'; }).join('') +
       '<hr><a href="videos.html">' + icon('play') + 'الفيديوهات والشروحات</a>' +
       '<a href="updates.html">' + icon('sparkles') + 'آخر التحديثات</a>' +
+      '<a href="solutions.html">' + icon('store') + 'حلول حسب النشاط</a>' +
       '<a href="index.html#customers">' + icon('users') + 'عملاؤنا</a>' +
       '<a href="index.html#about">' + icon('heart') + 'من نحن</a>' +
       '<a class="btn btn-wa btn-block" href="' + wa('مرحباً Nexa Solutions، أريد الاستفسار عن منتجاتكم') + '" target="_blank" rel="noopener">' + icon('whatsapp') + 'كلمنا على واتساب</a>' +
@@ -128,7 +129,7 @@
         '<a href="' + D.facebook + '" target="_blank" rel="noopener" aria-label="فيسبوك">' + icon('facebook') + '</a>' +
         '<a href="tel:' + D.phone + '" aria-label="اتصل بنا">' + icon('phone') + '</a></div></div>' +
         '<div><h4>منتجاتنا</h4><ul>' + Object.keys(P).map(function (k) { return '<li><a href="' + P[k].page + '">' + P[k].name + '</a></li>'; }).join('') + '</ul></div>' +
-        '<div><h4>روابط</h4><ul><li><a href="videos.html">الفيديوهات والشروحات</a></li><li><a href="updates.html">آخر التحديثات</a></li><li><a href="index.html#customers">عملاؤنا</a></li><li><a href="index.html#about">من نحن</a></li><li><a href="index.html#faq">الأسئلة الشائعة</a></li></ul></div>' +
+        '<div><h4>روابط</h4><ul><li><a href="videos.html">الفيديوهات والشروحات</a></li><li><a href="solutions.html">حلول حسب النشاط</a></li><li><a href="updates.html">آخر التحديثات</a></li><li><a href="index.html#customers">عملاؤنا</a></li><li><a href="index.html#about">من نحن</a></li><li><a href="index.html#faq">الأسئلة الشائعة</a></li></ul></div>' +
         '<div><h4>تواصل معنا</h4><ul><li><a href="tel:' + D.phone + '" dir="ltr">' + D.phone + '</a></li>' +
         (D.email ? '<li><a href="mailto:' + D.email + '">' + D.email + '</a></li>' : '') +
         '<li>' + D.address + '</li><li><a href="' + wa() + '" target="_blank" rel="noopener">واتساب</a></li></ul></div>' +

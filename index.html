@@ -21,9 +21,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- jsonld:start -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Nexa Solutions","url":"https://nexamasr.com/","logo":"https://nexamasr.com/assets/img/brand/nexa-512.png","telephone":"+201041213020","address":{"@type":"PostalAddress","addressLocality":"المنيا الجديدة","addressCountry":"EG"},"sameAs":["https://facebook.com/NexaSolutitions"]}
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nexamasr.com/#org","name":"Nexa Solutions","alternateName":"نيكسا سوليوشنز","url":"https://nexamasr.com/","logo":"https://nexamasr.com/assets/img/brand/nexa-512.png","description":"شركة مصرية بتصمّم وتطوّر برامج كاشير ونقاط بيع وإدارة مطاعم ومتاجر إلكترونية وأنظمة مخصصة لكل نشاط.","telephone":"+201041213020","areaServed":{"@type":"Country","name":"Egypt"},"address":{"@type":"PostalAddress","addressLocality":"المنيا الجديدة","addressRegion":"المنيا","addressCountry":"EG"},"contactPoint":{"@type":"ContactPoint","telephone":"+201041213020","contactType":"sales","areaServed":"EG","availableLanguage":["ar"]},"sameAs":["https://facebook.com/NexaSolutitions"]},{"@type":"WebSite","@id":"https://nexamasr.com/#site","name":"Nexa Solutions","url":"https://nexamasr.com/","inLanguage":"ar","publisher":{"@id":"https://nexamasr.com/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"أنهي منتج مناسب لنشاطي؟","acceptedAnswer":{"@type":"Answer","text":"لو عندك محل أو سوبر ماركت أو أي نشاط تجزئة: Bexa POS . لو مطعم أو كافيه: Foodexa . ولو عايز تبيع أونلاين بمتجر باسمك: Storexa . وممكن تستخدم Bexa وStorexa مع بعض علشان طلبات المتجر توصل الكاشير مباشرة."}},{"@type":"Question","name":"هل في نسخة تجريبية؟","acceptedAnswer":{"@type":"Answer","text":"أيوه. تقدر تحمّل النسخة التجريبية من Bexa أو Foodexa وتجرّبها 7 أيام بكل المميزات، وStorexa ليه متجر تجريبي 10 أيام. ولو محتاج مساعدة في التثبيت كلّمنا على واتساب."}},{"@type":"Question","name":"هل البرامج محتاجة إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"Bexa وFoodexa بيشتغلوا على جهازك من غير إنترنت؛ الشبكة مطلوبة بس لربط الأجهزة أو الفروع ببعض. Storexa متجر إلكتروني فبيشتغل على الإنترنت، وبتديره من موبايلك."}},{"@type":"Question","name":"أنا عميل قديم على Nexa POS أو Nexa Rest — إيه اللي اتغير؟","acceptedAnswer":{"@type":"Answer","text":"الاسم بس. Nexa POS بقى Bexa POS، وNexa Rest بقى Foodexa، وبياناتك وترخيصك زي ما هم. كلّمنا علشان تاخد آخر تحديث بالمميزات الجديدة."}},{"@type":"Question","name":"إزاي بيتم التركيب والدعم الفني؟","acceptedAnswer":{"@type":"Answer","text":"فريقنا بيجهّز البرنامج ببيانات نشاطك، ويضبط الطابعات والأجهزة، ويدرّب فريقك. وبعد كده الدعم والمتابعة على واتساب."}}]}]}
   </script>
+  <!-- jsonld:end -->
 </head>
 <body data-page="home">
   <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
@@ -121,6 +123,32 @@
               <p class="formerly" style="margin:12px 0 0">منتج جديد من Nexa Solutions</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOLUTIONS BY BUSINESS TYPE (links built by tools/build-solutions.mjs) ============ -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">حلول حسب النشاط</span>
+          <h2 class="title">برنامج كاشير ونظام إدارة لكل نشاط</h2>
+          <p>سوبر ماركت، محل ملابس، مكتبة، مطعم أو كافيه… اختار نشاطك وشوف البرنامج بيحل مشاكله إزاي.</p>
+        </div>
+        <div class="sol-links">
+          <!-- solutions:start -->
+          <a class="sol-link t-bexa" href="cashier-program.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج كاشير</b><small>لكل أنواع المحلات</small></span></a>
+          <a class="sol-link t-bexa" href="supermarket-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج سوبر ماركت</b><small>السوبر ماركت والبقالة</small></span></a>
+          <a class="sol-link t-bexa" href="clothing-store-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج محلات ملابس</b><small>محلات الملابس والأحذية</small></span></a>
+          <a class="sol-link t-bexa" href="mobile-shop-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج محلات موبايلات</b><small>محلات الموبايلات والإلكترونيات</small></span></a>
+          <a class="sol-link t-bexa" href="bookstore-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج مكتبات</b><small>المكتبات والأدوات المكتبية</small></span></a>
+          <a class="sol-link t-bexa" href="cosmetics-store-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج محلات عطور ومستحضرات تجميل</b><small>العطور ومستحضرات التجميل</small></span></a>
+          <a class="sol-link t-bexa" href="home-goods-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج محلات منظفات وأدوات منزلية</b><small>المنظفات والأدوات المنزلية والتشطيبات</small></span></a>
+          <a class="sol-link t-bexa" href="furniture-store-pos.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج معارض أثاث ومفروشات</b><small>الأثاث والمفروشات</small></span></a>
+          <a class="sol-link t-bexa" href="accounting-inventory-program.html"><img src="assets/img/brand/bexa.svg" alt="" width="36" height="36"><span><b>برنامج حسابات ومخازن</b><small>الحسابات والمخازن</small></span></a>
+          <a class="sol-link t-foodexa" href="restaurant-system.html"><img src="assets/img/brand/foodexa.svg" alt="" width="36" height="36"><span><b>برنامج مطاعم</b><small>المطاعم</small></span></a>
+          <a class="sol-link t-foodexa" href="cafe-pos.html"><img src="assets/img/brand/foodexa.svg" alt="" width="36" height="36"><span><b>برنامج كافيهات</b><small>الكافيهات والكافيه لاونج</small></span></a>
+          <!-- solutions:end -->
         </div>
       </div>
     </section>

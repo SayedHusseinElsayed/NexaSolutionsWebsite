@@ -8,7 +8,8 @@ import crypto from 'node:crypto';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
 const OUT = path.join(ROOT, 'dist');
 const PUBLIC = [
-  'index.html', 'bexa.html', 'foodexa.html', 'storexa.html', 'videos.html', 'updates.html', '404.html',
+  // every page at the root (hand-written pages and the generated «حلول» pages)
+  ...fs.readdirSync(ROOT).filter((f) => f.endsWith('.html')),
   'robots.txt', 'sitemap.xml', '_redirects', '_headers', 'sw.js', 'favicon.ico',
   'assets', 'knowledge/kb.json', 'knowledge/kb.md', 'brand/nexa-logo-kit',
 ];
