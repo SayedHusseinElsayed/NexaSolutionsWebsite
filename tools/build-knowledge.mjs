@@ -56,13 +56,13 @@ for (const [k, p] of Object.entries(D.products)) {
   if (p.trial) {
     const t = p.trial;
     out.push(`## تحميل النسخة التجريبية من ${p.name}
-- رابط التحميل (Google Drive): ${t.url}
+- رابط التحميل المباشر (من غير حساب جوجل): ${t.url}
 - الملف: ${t.file} — الإصدار ${t.version} — Windows 10/11 64-bit
 - مدة التجربة: ${t.days} أيام مجاناً بكل المميزات
 - بيانات الدخول التجريبية: ${t.login.map(r => `${r[0]}: ${r[1]}`).join('، ')}
 ${t.requires ? '- متطلب مهم: ' + t.requires + '\n' : ''}- خطوات التثبيت:
 ${t.steps.map((s, i) => `  ${i + 1}. ${s}`).join('\n')}
-- لو Google Drive قال إنه مش قادر يفحص الملف من الفيروسات: اضغط «Download anyway». ولو ظهرت رسالة حماية Windows: «More info» ثم «Run anyway».
+- الملف بيتحمّل مباشرة من سيرفر Nexa. لو ظهرت رسالة حماية Windows: «More info» ثم «Run anyway».
 - خطوات التثبيت بالصور على: ${SITE}/${k}#download`);
   }
 }
